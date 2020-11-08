@@ -2,13 +2,17 @@ var mobileNav = {
 	TABLET: 720,
 
 	hiddenNav: '.js-mobile-nav',
+	topSelector: '.js-mobile-top',
 	burgerSelector: '.js-burger',
+	topWrap: '.js-mobile-top-wrap',
 
-	openNav: ($menuToggleElem, $menuList) => {
+	openNav: ($menuToggleElem, $menuList, $top, $topWrap) => {
 		let isVisible = false;
 
 		$('html, body').toggleClass('js-lock');
 		$menuToggleElem.toggleClass('is-active');
+		$top.toggleClass('is-active');
+		$topWrap.toggleClass('is-active');
 
 		if (!$menuList.hasClass('is-active')) {
 			isVisible = true;
@@ -31,22 +35,12 @@ var mobileNav = {
 	init: () => {
 		const $navigation = $(mobileNav.hiddenNav);
 		const $burger = $(mobileNav.burgerSelector);
+		const $top = $(mobileNav.topSelector);
+		const $topWrap =  $(mobileNav.topWrap);
 
 		$burger.on('click', function () {
-			mobileNav.openNav($(this), $navigation)
+			mobileNav.openNav($(this), $navigation, $top, $topWrap)
 		});
-
-		$(window).resize(() => {
-			// if ($(window).width() > mobileNav.LARGE_TABLET) {
-			// 	if ($navigation.is(':visible')) {
-			// 		$navigation.css('style', '').removeAttr('style');
-			// 	}
-			//
-			// 	if ($burger.hasClass('is-active')) {
-			// 		$burger.removeClass('is-active')
-			// 	}
-			// }
-		})
 	}
 };
 

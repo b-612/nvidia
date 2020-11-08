@@ -5,6 +5,12 @@
 	background-color: $dark;
 
 	.container {
+		@media (max-width: $large_tablet) {
+			&.is-active {
+				padding-top: 56px;
+			}
+		}
+
 		@media (min-width: $small_desktop) {
 			display: flex;
 			align-items: flex-start;
@@ -40,6 +46,18 @@
 	&__mobile-top {
 		display: flex;
 		flex-wrap: wrap;
+
+		@media (max-width: $large_tablet) {
+			&.is-active {
+				position: fixed;
+				top: 0;
+				left: 0;
+
+				width: 100%;
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+		}
 	}
 
 	&__logo {
@@ -74,9 +92,9 @@
 
 	&__mobile-bottom {
 		@media (max-width: $large_tablet) {
-			position: absolute;
+			position: fixed;
 			z-index: 1;
-			bottom: 0;
+			top: 57px;
 			left: 0;
 
 			display: none;
@@ -86,8 +104,6 @@
 			padding-bottom: 80px;
 
 			background-color: $dark;
-
-			transform: translateY(100%);
 
 			&.is-active {
 				display: block;
