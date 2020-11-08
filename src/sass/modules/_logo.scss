@@ -1,0 +1,36 @@
+.logo {
+	@media (max-width: $small_desktop - 1) {
+		width: 45px;
+		height: 34px;
+	}
+
+	@media (min-width: $small_desktop) {
+		width: 81px;
+		height: 60px;
+	}
+
+	svg {
+		color: $green;
+
+		transition: color $default-tr;
+
+		@media (max-width: $small_desktop - 1) {
+			width: 45px;
+			height: 34px;
+		}
+
+		@media (min-width: $small_desktop) {
+			width: 81px;
+			height: 60px;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		svg {
+			color: #b348d5;
+		}
+	}
+}

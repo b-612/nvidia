@@ -1,0 +1,68 @@
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.fade-in {
+	animation-name: fadeIn;
+	animation-duration: 0.3s;
+	animation-timing-function: ease;
+}
+
+.fade-out {
+	animation-name: fadeOut;
+	animation-duration: 0.3s;
+	animation-timing-function: ease;
+}
+
+.my-mfp-zoom-in {
+	.zoom-anim-dialog {
+		opacity: 0;
+
+		transform: scale(0.8);
+		transition: all 0.2s ease-in-out;
+	}
+
+	.mfp-bg {
+		opacity: 0;
+
+		transition: opacity 0.3s ease-out;
+	}
+
+	&.mfp-ready {
+		.zoom-anim-dialog {
+			opacity: 1;
+
+			transform: scale(1);
+		}
+
+		.mfp-bg {
+			opacity: 0.8;
+		}
+	}
+
+	&.mfp-removing {
+		.zoom-anim-dialog {
+			opacity: 0;
+
+			transform: scale(0.8);
+		}
+
+		.mfp-bg {
+			opacity: 0;
+		}
+	}
+}

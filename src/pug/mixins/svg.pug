@@ -1,0 +1,5 @@
+mixin icon(params)
+	svg(class=params.className, width=params.width, height=params.height, role=params.role, aria-labelledby=params.titleId, aria-hidden=params.ariaHidden focusable=params.focusable)
+		if (params.titleId)
+			title(id=params.titleId) #{params.title}
+		use(xlink:href="/app/icons/sprite.svg#" + params.name)

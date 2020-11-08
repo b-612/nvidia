@@ -1,0 +1,67 @@
++b.advantages.SECTION
+	.container
+		+e.top-row.row.justify-content-center
+			.col-12.col-lg-8
+				+b.title._third.H1 Преимущества <br class="mobile">G-SYNC
+				P.text Каждый монитор с технологией G&#8209;SYNC проходит серьезное тестирование и контроль качества для&nbsp;обеспечения максимальной производительности. Сотни мониторов проходят контроль качества, но только прошедшие все тесты получают сертификацию G&#8209;SYNC.
+		+e.bottom-row.row.justify-content-center.reset-list.UL
+			-
+				var adventages = [
+					{
+						icon: {
+							className: 'advantages__icon',
+							name: 'camera',
+							view: '',
+							width: '160',
+							height: '90',
+							ariaHidden: 'true'
+						},
+						title: '<b>HDR</b> Display',
+						desc: 'Получите более широкий и&#32;комфортный&nbsp;для&#32;восприятия диапазон цветовой гаммы, чем в&#32;обычных&nbsp;мониторах.'
+					},
+					{
+						icon: {
+							className: 'advantages__icon',
+							name: 'clock',
+							view: '',
+							width: '160',
+							height: '90',
+							ariaHidden: 'true'
+						},
+						title: '<b>Input</b> LAG',
+						desc: 'Мониторы с технологией G&#8209;SYNC обеспечивают минимальную задержку между нажатием клавиш и&#32;результатом на экране, что очень важно для геймеров.'
+					},
+					{
+						icon: {
+							className: 'advantages__icon',
+							name: 'lightning',
+							view: '',
+							width: '160',
+							height: '90',
+							ariaHidden: 'true'
+						},
+						title: '<b>High refresh</b> rate',
+						desc: 'NVIDIA тесно сотрудничает с &#32;производителями&nbsp;мониторов, чтобы вывести на рынок широкий спектр дисплеев с&#32;высокой частотой обновления экрана от 75 до 360 Гц.'
+					},
+					{
+						icon: {
+							className: 'advantages__icon',
+							name: 'gamut',
+							view: '',
+							width: '160',
+							height: '90',
+							ariaHidden: 'true'
+						},
+						title: '<b>Wide color</b> gamut',
+						desc: 'Современные мониторы G&#8209;SYNC ULTIMATE поддерживают цветовой охват DCI-P3, обеспечивая более реалистичную цветопередачу с &#32;плавными&nbsp;переходами.'
+					}
+				];
+
+			each item in adventages
+				+e.item.col-12.col-md-6.col-lg-3.LI
+					+e.link.A(href="#")
+						+icon(item.icon)
+						+e.item-title.title._third._slim.H3 !{item.title}
+						P.text !{item.desc}
+
+		+e.buy.btn.js-popup.popup-with-zoom-anim.A(href="#buy-popup") Купить

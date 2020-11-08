@@ -1,0 +1,60 @@
+.burger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border: none;
+
+	cursor: pointer;
+
+	background-color: transparent;
+
+	transition: background-color $default-tr;
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		.burger {
+			&__line {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	&.is-active {
+		background-color: $green;
+	}
+
+	&__line {
+		width: 27px;
+		height: 2px;
+		margin-bottom: 12px;
+		border-radius: 1px;
+
+		background-color: #ffffff;
+
+		transition: opacity $default-tr;
+
+		&::before,
+		&::after {
+			display: block;
+			width: inherit;
+			height: inherit;
+			border-radius: inherit;
+
+			background-color: inherit;
+
+			content: "";
+		}
+
+		&::before {
+			margin-top: 6px;
+		}
+
+		&::after {
+			margin-top: 4px;
+		}
+	}
+}

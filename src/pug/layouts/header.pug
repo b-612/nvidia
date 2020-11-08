@@ -1,0 +1,61 @@
++b.header.HEADER
+	.container
+		+e.mobile-top
+			+e.logo.logo.A(href="#" aria-label="Логотип NVIDIA")
+				+icon({
+							className: '',
+							name: 'logo',
+							view: '',
+							width: '45',
+							height: '34',
+							role: 'img',
+							titleId: 'logoNvidia',
+							title: 'NVIDIA',
+							focusable: false
+						})
+			+e.burger.burger__.js-burger.BUTTON(aria-label="Показать/спрятать меню")
+				+e.line
+		+e.mobile-bottom.js-mobile-nav
+			+e.flex-wrap
+				+e.nav.NAV
+					+e.nav-list.reset-list.UL
+						- var navItems = ['Продукты', 'Технологии', 'Experience']
+
+						each itemText in navItems
+							+e.nav-item.LI
+								+e.nav-link.A(href="#") #{itemText}
+
+				+e.socials.socials__.reset-list.UL
+					-
+						var socials = [
+							{
+								hiddenText: 'Наш аккаунт в Twitter',
+								iconParams: {
+									name: 'tw',
+									width: '48',
+									height: '48',
+									role: 'img',
+									titleId: 'headerTwitter',
+									title: 'Наш аккаунт в Twitter',
+									focusable: false
+								}
+							},
+							{
+								hiddenText: 'Наш аккаунт в Twitter',
+								iconParams: {
+									name: 'inst',
+									width: '48',
+									height: '48',
+									role: 'img',
+									titleId: 'headerInsta',
+									title: 'Наш аккаунт в Instagram',
+									focusable: false
+								}
+							}
+						];
+
+					each social in socials
+						+e.social.LI
+							+e.link.social__.A(href="#")
+								+icon(social.iconParams)
+								SPAN.visually-hidden #{social.hiddenText}

@@ -1,0 +1,21 @@
+extends ../layouts/base
+
+append vars
+	-
+		title = 'G-Sync';
+
+		meta.versionPreloads = {
+			'/css/app.css': 'style',
+			'/js/app.js': 'script'
+		};
+
+		meta.staticPreloads = {
+			'//code.jquery.com/jquery-3.5.1.min.js': 'script',
+			'/app/fonts/roboto-v20-latin_cyrillic-regular.woff2': 'font',
+			'/app/fonts/roboto-v20-latin_cyrillic-700.woff2': 'font',
+			'/app/fonts/play-v12-latin_cyrillic-700.woff2': 'font'
+		}
+
+block content
+	MAIN.content
+		include ../layouts/advantages

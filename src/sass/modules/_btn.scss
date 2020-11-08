@@ -1,0 +1,26 @@
+.btn {
+	display: block;
+	padding: 16px 20px 16px;
+	border: 2px solid $green;
+
+	font-family: $play-bold;
+	font-size: 18px;
+	line-height: (21 / 18);
+	color: $white;
+	text-align: center;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+
+	background-color: $green;
+
+	transition: all $default-tr;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+
+		outline: none;
+		background-color: transparent;
+		box-shadow: 0 0 10px 0 #77B900;
+	}
+}

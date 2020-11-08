@@ -1,0 +1,161 @@
+.header {
+	position: relative;
+	z-index: 1;
+
+	background-color: $dark;
+
+	.container {
+		@media (min-width: $small_desktop) {
+			display: flex;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__nav {
+		@media (max-width: $large_tablet) {
+			margin-bottom: 40px;
+		}
+
+		@media (min-width: $small_desktop) {
+			margin-right: 10px;
+
+			@media (max-width: $large_desktop - 1) {
+				max-width: 72%;
+			}
+		}
+
+		@media (min-width: $large_desktop) {
+			max-width: 717px;
+		}
+	}
+
+	&__nav-list {
+		@media (min-width: $small_desktop) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__mobile-top {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__logo {
+		@media (max-width: $large_tablet) {
+			margin-top: 11px;
+			margin-right: 20px;
+		}
+
+		@media (min-width: $small_desktop) {
+			margin-top: 15px;
+			margin-right: 14px;
+		}
+	}
+
+	&__burger {
+		@media (max-width: $large_mobile) {
+			margin-right: -15px;
+		}
+
+		@media (min-width: $large_mobile + 1) {
+			margin-right: 0;
+		}
+
+		@media (max-width: $large_tablet) {
+			margin-left: auto;
+		}
+
+		@media (min-width: $large_tablet + 1) {
+			display: none;
+		}
+	}
+
+	&__mobile-bottom {
+		@media (max-width: $large_tablet) {
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			left: 0;
+
+			display: none;
+			width: 100%;
+			height: calc(100vh - 56px);
+			padding-top: 16px;
+			padding-bottom: 80px;
+
+			background-color: $dark;
+
+			transform: translateY(100%);
+
+			&.is-active {
+				display: block;
+			}
+		}
+
+		@media (min-width: $small_desktop) {
+			flex-grow: 1;
+		}
+	}
+
+	&__flex-wrap {
+		display: flex;
+
+		@media (max-width: $large_tablet) {
+			overflow-y: auto;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		@media (min-width: $small_desktop) {
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__socials {
+		@media (max-width: $large_tablet) {
+			margin-top: auto;
+		}
+
+		@media (min-width: $small_desktop) {
+			margin-left: auto;
+			padding-top: 21px;
+
+			@media (max-width: $large_desktop - 1) {
+				max-width: 28%;
+			}
+		}
+
+		@media (min-width: $large_desktop) {
+			max-width: 300px;
+		}
+	}
+
+	&__nav-link {
+		display: block;
+
+		text-align: center;
+		letter-spacing: 0.3px;
+		text-transform: uppercase;
+
+		transition: color $default-tr;
+
+		@media (max-width: $large_tablet) {
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+
+		@media (min-width: $small_desktop) {
+			padding: 31px 24px;
+		}
+
+		&:hover,
+		&:focus {
+			color: $green;
+
+			outline: none;
+		}
+	}
+}

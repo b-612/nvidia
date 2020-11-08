@@ -1,0 +1,6 @@
+/node_modules/
+/dist/
+package-lock.json
+.idea/
+gulp/settings/ftp.json
+.csscomb.json

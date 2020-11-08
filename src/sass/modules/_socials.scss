@@ -1,0 +1,17 @@
+.socials {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (max-width: $large_tablet) {
+		justify-content: center;
+		padding-left: 12px;
+	}
+
+	@media (min-width: $small_desktop) {
+		justify-content: flex-end;
+	}
+
+	&__social {
+		margin-right: 12px;
+	}
+}

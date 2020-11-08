@@ -1,0 +1,100 @@
+include ../mixins/mixin-loader.pug
+
+block vars
+	-
+		var dateNow = Date.now();
+	-
+		var title = title || ''
+		var description = description || ''
+		var image = image || ''
+	-
+		var html = {
+			attrs: {
+				lang: 'ru'
+			},
+			classList: []
+		}
+	-
+		var body = {
+			attrs: {},
+			classList: []
+		}
+	-
+		var meta = {
+			charset: 'utf-8',
+			description: description,
+			keywords: [],
+			ogTitle: title,
+			viewport: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1',
+			XUACompatible: 'IE=edge',
+
+			versionPreloads: {},
+
+			staticPreloads: {}
+		}
+	-
+		var link = {
+			icon: '/app/img/favicon.png',
+			icon16x16: '',
+			icon32x32: '',
+		}
+	-
+		var elements = {};
+		var interMap = false;
+		var weEquipped = {
+			mode: '',
+			subtitle: '',
+			pagination: false
+		};
+
+doctype html
+html(class=html.classList)&attributes(html.attrs)
+	head
+		block head-start
+		block meta
+			if meta.charset
+				meta(charset=meta.charset)
+			if meta.XUACompatible
+				meta(http-equiv="X-UA-Compatible" content=meta.XUACompatible)
+			if meta.viewport
+				meta(name="viewport" content=meta.viewport)
+			if meta.description
+				meta(name="description" content=meta.description)
+			if meta.versionPreloads
+				each type, link in meta.versionPreloads
+					link(rel="preload" href=link + "?v=" + dateNow as=type)
+			if meta.staticPreloads
+				each type, link in meta.staticPreloads
+					if type === 'font'
+						link(rel="preload" href=link as=type crossorigin)
+					else
+						link(rel="preload" href=link as=type)
+		title
+			= title
+		block links
+			if link.icon
+				link(rel="icon" href=link.icon)
+			if link.icon16x16
+				link(rel="icon" href=link.icon16x16 sizes="16x16")
+			link(rel="stylesheet" href="/css/app.css?v=" + dateNow)
+			script.
+							function canUseWebP() {
+								var e = document.createElement("canvas");
+								return !(!e.getContext || !e.getContext("2d")) && 0 == e.toDataURL("image/webp").indexOf("data:image/webp")
+							}var root = document.getElementsByTagName("html")[0];canUseWebP() ? root.classList.add("ws") : root.classList.add("wn");
+		block head-end
+	body(class=body.classList)&attributes(body.attrs)
+		block body-start
+			block header
+				include header
+			block content
+			block footer
+				include footer
+		block popup
+			include popup
+
+		block scripts
+			script(src="//code.jquery.com/jquery-3.5.1.min.js")
+			script(src="/js/app.js?v=" + dateNow)
+
+		block body-end

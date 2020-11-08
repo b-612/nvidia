@@ -1,0 +1,83 @@
+.advantages {
+	padding-top: 60px;
+	padding-bottom: 62px;
+
+	@media (min-width: $small_desktop) {
+		min-height: 850px;
+
+		background-image: url("/img/advantage-bg.jpg");
+		background-repeat: no-repeat;
+		background-position: right bottom;
+	}
+
+	&__top-row {
+		margin-bottom: 50px;
+
+		text-align: center;
+	}
+
+	&__item {
+		margin-bottom: 50px;
+	}
+
+	.title {
+		&_third {
+			margin-bottom: 20px;
+
+			text-transform: uppercase;
+		}
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+
+		&:hover,
+		&:focus {
+			outline: none;
+
+			.advantages {
+				&__icon {
+					color: rgba(119, 185, 0, 0.25);
+				}
+			}
+		}
+	}
+
+	&__icon {
+		display: inline-block;
+		width: 160px;
+		height: 90px;
+		margin-right: auto;
+		margin-bottom: 28px;
+		margin-left: auto;
+
+		color: transparent;
+
+		transition: color $default-tr;
+	}
+
+	&__item-title {
+		&.title {
+			margin-bottom: 12px;
+		}
+
+		@media (max-width: $large_tablet) {
+			text-align: center;
+		}
+
+		b {
+			font-family: $play-bold;
+			font-weight: bold;
+			color: $green;
+		}
+	}
+
+	&__buy {
+		@media (min-width: $small_tablet) {
+			width: 192px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}

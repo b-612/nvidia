@@ -1,0 +1,108 @@
+.buy-form {
+	margin-right: auto;
+	margin-left: auto;
+	border: 2px solid $green;
+
+	background-color: $dark;
+
+	@media (max-width: $large_mobile) {
+		width: 90%;
+		padding: 50px 20px;
+	}
+
+	@media (min-width: $large_mobile + 1) and (max-width: $small_tablet) {
+		width: 80%;
+		padding: 50px;
+	}
+
+	@media (min-width: $small_tablet + 1) {
+		width: 540px;
+		padding: 70px 93px;
+	}
+
+	.mfp-close {
+		width: 41px;
+		height: 38px;
+
+		opacity: 1;
+
+		&:hover,
+		&:focus {
+			&::before,
+			&::after {
+				background-color: $green;
+			}
+		}
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			width: 2px;
+			height: 24px;
+			border-radius: 1px;
+
+			background-color: $white;
+
+			transition: background-color $default-tr;
+
+			content: "";
+		}
+
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__label {
+		display: block;
+		margin-bottom: 20px;
+
+		&.error {
+			box-shadow: 0 0 0 2px crimson;
+		}
+
+		&.valid {
+			box-shadow: 0 0 0 2px $green;
+		}
+	}
+
+	&__input {
+		width: 100%;
+
+		box-shadow: 0 0 0 2px transparent;
+
+		transition: all $default-tr;
+
+		&:hover,
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__submit {
+		@media (max-width: $small_tablet) {
+			display: block;
+			width: 100%;
+		}
+
+		@media (min-width: $small_tablet + 1) {
+			width: 192px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
